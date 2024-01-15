@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  background-color: #ffe7d5;
+}
+
+
+.a {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+main {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 20%;
+}
+
+#head {
+  padding: 10px 0;
+  font-size: 45px;
+}
+
+
+#loading {
+  transition: all 5s; /*ローディングにかかる時間*/
+  background-color: #ff7a37;
+  z-index: 999;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.spin {
+  width: 50%;
+  height: auto;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+#header {
+   position: fixed;
+       /*fixedで上部固定*/
+  position: fixed;
+  height: 70px;
+  width:100%;
+  z-index: 998;/*最前面へ*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#191919;
+  text-align: center;
+  padding: 10px;
+
+}
+
+/*　上に上がる動き　*/
+#header.UpMove{
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+  transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+  transform: translateY(-100px);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#header.DownMove{
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 0;
+  transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+
+nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;  
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #191919;
+  padding-right: 50px;
+  transition: all 0.3s;
+}
+
+nav ul li.current a,
+nav ul li a:hover,
+nav ul li a:active{
+  color:#ff7a37; 
+}
+
+
+
+.main-b {
+  width: 60%;
+
+}
+
+#me {
+  display: flex;
+}
+
+#me-img {
+  width: 40%;
+}
+#text {
+  margin-top: 20%;
+}
+
+footer {
+  text-align: center;
+  padding: 10%;
+}
+
+.gallery {
+  width: 110%;
+  margin-right: 50px;
+}
+
+
+#caption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(68, 68, 68, 0.5);
+  padding: 5px;
+  width: 30%;
+  box-sizing: border-box;
+  color: #FFF;
+}
+
+.gallery ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  padding-top: 40px;
+  margin-right: 40%;
+}
+
+.gallery ul li {
+  }
+
+.gallery img {
+  margin: 40px;
+  border-radius: 30px;
+}
+
+
+@media screen and (max-width: 640px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
